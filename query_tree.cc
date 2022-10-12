@@ -84,6 +84,7 @@ namespace {
 
 }  // namespace
 
+/*
 int
 main(int argc, char** argv) {
 	if (argc != 2) {
@@ -97,4 +98,4 @@ main(int argc, char** argv) {
 	QueryTree(db_filename, a_tree);
 
 	return 0;
-}
+}*/
