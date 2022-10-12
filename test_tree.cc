@@ -135,6 +135,7 @@ namespace {
 
 }  // namespace
 
+/*
 int
 main(int argc, char** argv) {
 	if (argc != 3) {
@@ -151,3 +152,4 @@ main(int argc, char** argv) {
 
 	return 0;
 }
+*/
