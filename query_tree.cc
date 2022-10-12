@@ -98,4 +98,5 @@ main(int argc, char** argv) {
 	QueryTree(db_filename, a_tree);
 
 	return 0;
-}*/
+}
+*/
