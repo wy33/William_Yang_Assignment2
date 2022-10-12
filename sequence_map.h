@@ -96,13 +96,16 @@ public:
 
 	friend std::ostream& operator<<(std::ostream& out, const SequenceMap& sequence)
 	{
-		out << sequence.recognition_sequence_ << ':';
+//		out << sequence.recognition_sequence_ << ':';
 
 		if (sequence.enzyme_acronyms_.size() != 0)
 		{
 			for (size_t i = 0; i < sequence.enzyme_acronyms_.size(); i++)
 			{
-				out << ' ' << sequence.enzyme_acronyms_[i];
+//				out << ' ' << sequence.enzyme_acronyms_[i];
+				out << sequence.enzyme_acronyms_[i];
+				if (i < sequence.enzyme_acronyms_.size() - 1)
+					out << ' ';
 			}
 		}
 		else
