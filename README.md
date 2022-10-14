@@ -24,8 +24,8 @@ All parts completed.
 - printTree(): unmodified.
 - getElement(): added function to access element of node.
 - numberOfNodes(): counts the number of nodes in the tree (size_t).
-- internalPathLength(): calculates and returns internal path length (size_t).
-- averageDepth(): calculates and returns average depth (float).
+- internalPathLength(): calculates (and returns internal path length (size_t). Formula: internal path length of left + internal path length of right + nodes - 1.
+- averageDepth(): calculates and returns average depth (float). Formula: internal path length / nodes.
 - find(): returns true if element is found and false if not. Recursive calls are counted towards recursion_counter.
 - getTotalRecursionCalls(): getter function for the accumulated recursive calls of findMin(), find(), and remove().
 - resetRecursionCounter(): resets the recursion counter member to 0.
