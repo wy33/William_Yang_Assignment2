@@ -23,7 +23,7 @@ All parts completed.
 - isEmpty(): unmodified.
 - makeEmpty(): unmodified.
 - printTree(): unmodified.
-- getElement(): added function to access element of node.
+- getElement(): added function to access element of node. If element isn't found, throw an exception. Not sure if I was supposed to throw an exception from the file `dsexceptions.h` or with an abort()/exit(). I chose to use one from the provided file and went with the exception I thought to be the best fit for the error, *ArrayIndexOutOfBoundsException*.
 - numberOfNodes(): counts the number of nodes in the tree (size_t).
 - internalPathLength(): calculates (and returns internal path length (size_t). Formula: internal path length of left + internal path length of right + nodes - 1.
 - averageDepth(): calculates and returns average depth (float). Formula: internal path length / nodes.
@@ -51,6 +51,10 @@ All parts completed.
 `query_tree.cc` `test_tree.cc` `test_tree_mod.cc`
 - The above 3 files all use a helper parsing function: **GetNextRecognitionSequence()** to help separate and retreive the recognition sequences and enzyme acronyms in each line from the database. The function's return value is boolean and returns true if there are more enzyme acronyms to retreive and false if not. The function utilizes the '/' separators to determine how to split the line and '//' to determine when to stop. The function updates the a_reco_seq string via reference.
 - To reduce the cost of object creation, SequenceMap has an added function **setRecognitionSequence()**. This was added to allow for the possibility of a variable outside of the while loop (to read user/file input) to be used for comparison purposes. This allows for the comparison variable's recognition_sequence_ to be adjusted for comparisons (for querying, finding, and removing nodes in the tree).
+
+## Bugs encountered
+
+For Part2(b), the output for 4b is .02 off when I run it in Linux lab computers. I'm about 10 recursion calls short, but it seems fine on Gradescope.
 
 ## Input File
 
@@ -103,4 +107,10 @@ To run, type:
 ```
 ```bash
 ./test_tree_mod rebase210.txt sequences.txt
+```
+
+To run query_tree with user input, type:
+
+```bash
+./query_tree rebase210.txt
 ```
