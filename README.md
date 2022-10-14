@@ -13,6 +13,7 @@ This repository contains the following:
 ## Parts of the program completed
 
 All parts completed.
+
 `avl_tree.h`
 - insert(): unmodified.
 - remove(): return value is now boolean (used to determine if remove was successful), and increments the recursion_counter member variable for every recursive call.
