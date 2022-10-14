@@ -92,11 +92,14 @@ namespace {
 
 		string query_sequence;
 		size_t successful_queries = 0;
+		// a_tree only has comparison functions for SequenceMap objects.
+		// To reduce the cost of initializing a new SequenceMap variable every loop,
+		// the function setRecognitionSequence() was added to SequenceMap class.
+		SequenceMap comparison_sequence_map;
 		// Read file input.
 		while (getline(sequences, query_sequence) && !sequences.fail())
 		{
-			// a_tree only has comparison functions for SequenceMap objects.
-			SequenceMap comparison_sequence_map(query_sequence);
+			comparison_sequence_map.setRecognitionSequence(query_sequence);
 
 			if (a_tree.find(comparison_sequence_map))
 				successful_queries++;
@@ -121,8 +124,8 @@ namespace {
 		// Read file input again.
 		while (getline(sequences, query_sequence) && !sequences.fail())
 		{
-			// a_tree only has comparison functions for SequenceMap objects.
-			SequenceMap comparison_sequence_map(query_sequence);
+			// Reuse the SequenceMap object from the last loop.
+			comparison_sequence_map.setRecognitionSequence(query_sequence);
 
 			if (a_tree.remove(comparison_sequence_map))
 				successful_removes++;
