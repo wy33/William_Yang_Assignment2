@@ -75,11 +75,14 @@ namespace {
 		database.close();
 
 		string query_sequence;
+		// a_tree only has comparison functions for SequenceMap objects.
+		// To reduce the cost of initializing a new SequenceMap variable every loop,
+		// the function setRecognitionSequence() was added to SequenceMap class.
+		SequenceMap comparison_sequence_map;
 		// Querying tree.
 		while (getline(cin, query_sequence) && !cin.fail())
 		{
-			// a_tree only has comparison functions for SequenceMap objects.
-			SequenceMap comparison_sequence_map(query_sequence);
+			comparison_sequence_map.setRecognitionSequence(query_sequence);
 
 			if (a_tree.contains(comparison_sequence_map))
 				a_tree.getElement(comparison_sequence_map).PrintEnzymeAcronyms();
