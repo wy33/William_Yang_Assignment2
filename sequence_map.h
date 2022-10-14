@@ -42,6 +42,15 @@ public:
 	{
 		enzyme_acronyms_.push_back(an_enz_acro);
 	}
+	
+	// @a_rec_seq: a recognition sequence.
+	// Mutator for member recognition_sequence_.
+	// Note: added to help reduce the cost of initializing another SequenceMap object for comparison in
+	//		query_tree.cc, test_tree.cc, and test_tree_mod.cc.
+	void setRecognitionSequence(const std::string& a_rec_seq)
+	{
+		recognition_sequence_ = a_rec_seq;
+	}
 
 	// Overloaded < operator.
 	// @return true if current recognition sequence is shorter or smaller than rhs;
