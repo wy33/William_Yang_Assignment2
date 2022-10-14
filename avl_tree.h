@@ -23,10 +23,10 @@ using namespace std;
 // void makeEmpty( )      --> Remove all items
 // void printTree( )      --> Print tree in sorted order
 // Comparable getElement( x )			--> Return element x
-// size_t numberOfNodes( )				--> Return number of nodes
+// size_t numberOfNodes( )			--> Return number of nodes
 // size_t internalPathLength( )			--> Return internal path length
-// float averageDepth( )				--> Return average depth
-// bool find( x )						--> Return true if x is found
+// float averageDepth( )			--> Return average depth
+// bool find( x )				--> Return true if x is found
 // size_t getTotalRecursionCalls( )		--> Return total recursion calls for functions: find(), remove(), and findMin()
 // void resetRecursionCounter( )		--> Reset total recursion calls counter to 0
 // ******************ERRORS********************************
