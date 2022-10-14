@@ -45,8 +45,8 @@ All parts completed.
 - Merge(): appends supplied SequenceMap object's enzyme_acronyms_ vector to current SequenceMap object's enzyme_acronyms_ vector.
 - PrintEnzymeAcronyms(): cout the enzyme_acronyms_ vector. Output format: AasI AabI etc...
 - PrintRecognitionSequence(): cout the recognition_sequence_ member.
-- operator<<: similar print format to PrintEnzymeAcronyms() function. Output format: AasI AabI etc...
-- operator>>: takes in enzyme acronyms in a list format from a file or user input and puts it in the enzyme_acronyms_ vector member.
+- **EC1** operator<<: similar print format to PrintEnzymeAcronyms() function. Output format: AasI AabI etc...
+- **EC1** operator>>: takes in enzyme acronyms in a list format from a file or user input and puts it in the enzyme_acronyms_ vector member.
 
 `query_tree.cc` `test_tree.cc` `test_tree_mod.cc`
 - The above 3 files all use a helper parsing function: **GetNextRecognitionSequence()** to help separate and retreive the recognition sequences and enzyme acronyms in each line from the database. The function's return value is boolean and returns true if there are more enzyme acronyms to retreive and false if not. The function utilizes the '/' separators to determine how to split the line and '//' to determine when to stop. The function updates the a_reco_seq string via reference.
