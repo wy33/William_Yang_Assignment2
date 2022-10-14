@@ -92,3 +92,15 @@ To delete executables and object files, type:
 ```bash
 make clean
 ```
+
+To run, type:
+
+```bash
+./query_tree rebase210.txt < input_part2a.txt
+```
+```bash
+./test_tree rebase210.txt < sequences.txt
+```
+```bash
+./test_tree_mod rebase210.txt sequences.txt
+```
