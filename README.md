@@ -30,9 +30,11 @@ All parts completed.
 - find(): returns true if element is found and false if not. Recursive calls are counted towards recursion_counter.
 - getTotalRecursionCalls(): getter function for the accumulated recursive calls of findMin(), find(), and remove().
 - resetRecursionCounter(): resets the recursion counter member to 0.
+
 `avl_tree_p2c.h`
 - doubleRotateWithLeftChild(): double rotation now happens in one go without calling 2 single rotation functions.
 - doubleRotateWithRightChild(): double rotation now happens in one go without calling 2 single rotation functions.
+
 `sequence_map.h`
 - The big five: all set to default.
 - One-parameter constructor: initializes recognition_sequence_ only.
@@ -45,14 +47,25 @@ All parts completed.
 - PrintRecognitionSequence(): cout the recognition_sequence_ member.
 - operator<<: similar print format to PrintEnzymeAcronyms() function. Output format: AasI AabI etc...
 - operator>>: takes in enzyme acronyms in a list format from a file or user input and puts it in the enzyme_acronyms_ vector member.
-`query_tree.cc`
-- 
-`test_tree.cc`
-- 
-`test_tree_mod.cc`
-- 
 
-You will use this exact `Makefile` for your Homework 2. Failure to do so will result in *deduction* of points. Replace this file with a `README.md` for your own project. You can move these instructions to the bottom of the file if you wish.
+`query_tree.cc` `test_tree.cc` `test_tree_mod.cc`
+- The above 3 files all use a helper parsing function: **GetNextRecognitionSequence()** to help separate and retreive the recognition sequences and enzyme acronyms in each line from the database. The function's return value is boolean and returns true if there are more enzyme acronyms to retreive and false if not. The function utilizes the '/' separators to determine how to split the line and '//' to determine when to stop. The function updates the a_reco_seq string via reference.
+- To reduce the cost of object creation, SequenceMap has an added function **setRecognitionSequence()**. This was added to allow for the possibility of a variable outside of the while loop (to read user/file input) to be used for comparison purposes. This allows for the comparison variable's recognition_sequence_ to be adjusted for comparisons (for querying, finding, and removing nodes in the tree).
+
+## Input File
+
+`rebase210.txt`
+`input_part2a.txt`
+`sequences.txt`
+
+## Output file
+
+`output_part2a.txt`
+`output_part2b.txt`
+
+## Running the assignment
+
+Use provided `Makefile` for Homework 2.
 
 To compile on terminal, type:
 
@@ -64,6 +77,14 @@ You can compile one program individually by just typing `make <Program Name>`, f
 
 ```bash
 make query_tree
+```
+
+```bash
+make test_tree
+```
+
+```bash
+make test_tree_mod
 ```
 
 To delete executables and object files, type:
