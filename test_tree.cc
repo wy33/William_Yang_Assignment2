@@ -99,6 +99,7 @@ namespace {
 		// Read file input.
 		while (getline(sequences, query_sequence) && !sequences.fail())
 		{
+			// Reuse the SequenceMap object from the last loop.
 			comparison_sequence_map.setRecognitionSequence(query_sequence);
 
 			if (a_tree.find(comparison_sequence_map))
