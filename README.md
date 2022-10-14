@@ -99,7 +99,7 @@ To run, type:
 ./query_tree rebase210.txt < input_part2a.txt
 ```
 ```bash
-./test_tree rebase210.txt < sequences.txt
+./test_tree rebase210.txt sequences.txt
 ```
 ```bash
 ./test_tree_mod rebase210.txt sequences.txt
