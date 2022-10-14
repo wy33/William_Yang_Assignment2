@@ -17,7 +17,7 @@ using namespace std;
 //
 // ******************PUBLIC OPERATIONS*********************
 // void insert( x )       --> Insert x
-// bool remove( x )       --> Remove x (unimplemented)
+// bool remove( x )       --> Remove x
 // bool contains( x )     --> Return true if x is present
 // Comparable findMin( )  --> Return smallest item
 // Comparable findMax( )  --> Return largest item
