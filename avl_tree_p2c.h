@@ -287,7 +287,7 @@ private:
 		else if (t->element < x)
 			insert(std::move(x), t->right);
 		else
-			t->element.Merge(std::move(x)); ////////////////////////////////////////////merge????
+			t->element.Merge(std::move(x));
 
 		balance(t);
 	}
@@ -302,7 +302,6 @@ private:
 	 */
 	bool remove(const Comparable& x, AvlNode*& t)
 	{
-		//		total_recursion_calls_++;
 		if (t == nullptr)
 			return false;   // Item not found; do nothing
 
@@ -310,21 +309,19 @@ private:
 
 		if (x < t->element)
 		{
-//			total_recursion_calls_++;
 			removed = remove(x, t->left);
 			if (removed)
 				recursion_counter++;
 		}
 		else if (t->element < x)
 		{
-//			total_recursion_calls_++;
 			removed = remove(x, t->right);
 			if (removed)
 				recursion_counter++;
 		}
 		else if (t->left != nullptr && t->right != nullptr) // Two children
 		{
-			recursion_counter += 2;; // 2 function calls, 1 recursive function call (remove).
+			recursion_counter += 2;
 			t->element = findMin(t->right)->element;
 			removed = remove(t->element, t->right);
 		}
@@ -524,8 +521,6 @@ private:
 		k3->height = max(height(k3->left), height(k3->right)) + 1;
 		k2->height = max(k1->height, k3->height) + 1;
 		k3 = k2;
-//		rotateWithRightChild(k3->left);
-//		rotateWithLeftChild(k3);
 	}
 
 	/**
@@ -547,13 +542,10 @@ private:
 		k3->height = max(height(k3->left), height(k3->right)) + 1;
 		k2->height = max(k1->height, k3->height) + 1;
 		k1 = k2;
-//		rotateWithLeftChild(k1->right);
-//		rotateWithRightChild(k1);
 	}
 
 	// End of avl manipulations
 
-	///////////////////////////////////////////////////////////////////////////
 	/*
 	 * Internal method to get x.
 	 * Assumes element exists and that the contains functioned was utilized beforehand.
@@ -600,7 +592,7 @@ private:
 	 * Returns true if found; else false.
 	 * Counts recursive calls of find() towards recursion counter.
 	 */
-	bool find(const Comparable& x, AvlNode* t) //////////////////////////
+	bool find(const Comparable& x, AvlNode* t)
 	{
 		if (t == nullptr)
 			return false;	// Not found

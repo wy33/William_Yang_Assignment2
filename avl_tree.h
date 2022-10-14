@@ -285,7 +285,7 @@ private:
 		else if (t->element < x)
 			insert(std::move(x), t->right);
 		else
-			t->element.Merge(std::move(x)); ////////////////////////////////////////////merge????
+			t->element.Merge(std::move(x));
 
 		balance(t);
 	}
@@ -300,7 +300,6 @@ private:
 	 */
 	bool remove(const Comparable& x, AvlNode*& t)
 	{
-//		total_recursion_calls_++;
 		if (t == nullptr)
 			return false;   // Item not found; do nothing
 
@@ -308,14 +307,12 @@ private:
 
 		if (x < t->element)
 		{
-//			total_recursion_calls_++;
 			removed = remove(x, t->left);
 			if (removed)
 				recursion_counter++;
 		}
 		else if (t->element < x)
 		{
-//			total_recursion_calls_++;
 			removed = remove(x, t->right);
 			if (removed)
 				recursion_counter++;
@@ -529,7 +526,6 @@ private:
 
 	// End of avl manipulations
 
-	///////////////////////////////////////////////////////////////////////////
 	/*
 	 * Internal method to get x.
 	 * Assumes element exists and that the contains functioned was utilized beforehand.

@@ -42,7 +42,7 @@ public:
 	{
 		enzyme_acronyms_.push_back(an_enz_acro);
 	}
-	
+
 	// @a_rec_seq: a recognition sequence.
 	// Mutator for member recognition_sequence_.
 	// Note: added to help reduce the cost of initializing another SequenceMap object for comparison in
